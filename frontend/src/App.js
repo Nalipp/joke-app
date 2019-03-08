@@ -11,7 +11,6 @@ class App extends Component {
     }
   }
   componentDidMount() {
-
     axios.get('/api/jokes/')
       .then(res => {
         console.log('res.status', res.status);
@@ -20,7 +19,6 @@ class App extends Component {
           this.setState({ allJokes: res.data });
         }
       })
-
   }
   render() {
     return (
