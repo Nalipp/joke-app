@@ -10,6 +10,6 @@ var jokeSchema = new mongoose.Schema({
   },
 });
 
-var Joke = mongoose.model('Joke', jokeSchema);
+var Joke = mongoose.model('Joke', jokeSchema, 'joke');
 
 module.exports = Joke;

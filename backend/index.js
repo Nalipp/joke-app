@@ -3,7 +3,7 @@ var app = express();
 var port = process.env.PORT || 8080;
 var bodyParser = require('body-parser');
 var path = require('path');
-var db = require('./models/joke');
+var db = require('./models');
 var axios = require('axios');
 
 app.use(express.static(path.resolve(__dirname, '../frontend/build')));
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/api/jokes', function(req, res){
-  db.Jokes.find()
+  db.Joke.find()
     .then(function(jokes){
       res.json(jokes);
     })
@@ -20,16 +20,26 @@ app.get('/api/jokes', function(req, res){
     })
 })
 
-var header = { headers: { "Accept": "application/json"} }
+function seedDb() {
+  var header = { headers: { "Accept": "application/json"} }
 
-const seedDb = () => {
   axios.get('https://icanhazdadjoke.com/search?limit=30&page=2', header)
     .then(res => {
-      console.log('res...', res.data);
-    }).catch(err => {
-      console.log('err...', err);
+      console.log('res...', res.data.results[1].joke);
+      db.Joke.create({text: res.data.results[1].joke})
+        .then(res => {
+          console.log('joke successfully written to db');
+        })
+        .catch(err => {
+          console.log('err creating joke in db...', err);
+        });
+    })
+    .catch(err => {
+      console.log('err accessing joke api...', err);
     });
 };
+
+// seedDb()
 
 app.listen(port, function(){
     console.log("APP IS RUNNING ON PORT " + port);

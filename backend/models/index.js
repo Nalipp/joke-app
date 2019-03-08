@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
-const Jokes = require("./joke");
+var Joke = require("./joke");
 
 if (process.env.MONGO_URI) {
   console.log('connecting to MONGO_URI..');
@@ -13,6 +13,6 @@ if (process.env.MONGO_URI) {
 mongoose.Promise = Promise;
 
 module.exports = {
-  Jokes,
+  Joke,
 }
 
