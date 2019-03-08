@@ -1,0 +1,9 @@
+.votable {
+  padding: 0.4em;
+  cursor: pointer;
+}
+
+.finished-vote {
+  color: #fff;
+  pointer-events: none;
+}
