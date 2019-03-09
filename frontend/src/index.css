@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
 ul,ol { list-style: none; }
 h1,h2,h3,h4,h5,h6,pre,code { font-size: 1em; }
 ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,dl,dt,dd, figure, figcaption {
@@ -11,3 +13,17 @@ mark {
 	background: transparent; }
 abbr { border: none; }
 summary::-webkit-details-marker { display: none; }
+button:focus {outline:0;}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: #74C4F9;
+  color: #344559;
+  font-size: 0.85em;
+  letter-spacing: 1px;
+}
+
+h2 {
+  padding: 1em;
+}
+

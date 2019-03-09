@@ -51,7 +51,7 @@ setInterval(function() {
 function seedDb() {
   var header = { headers: { "Accept": "application/json"} }
 
-  for (var page = 1; page <= 1; page += 18) {
+  for (var page = 1; page <= 18; page += 1) {
     axios.get(`https://icanhazdadjoke.com/search?limit=30&page=${page}`, header)
       .then(res => {
         var jokes = res.data.results;

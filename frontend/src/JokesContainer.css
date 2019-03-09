@@ -1,0 +1,22 @@
+.jokes-container {
+  background: #fff;
+  padding: 1em;
+  border-radius: 1em;
+  margin: 1em;
+}
+
+.more-jokes {
+  text-align: center;
+  margin: 3em auto 10em auto;
+}
+
+.more-jokes > button {
+  cursor: pointer;
+  padding: 1em 2em;
+  font-size: 1.5em;
+  background: #74C4F9;
+  border: 3px solid #344559;
+  color: #344559;
+  border-radius: 1em;
+  letter-spacing: 3.5px;
+}

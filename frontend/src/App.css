@@ -1,4 +1,37 @@
-.App {
+.app {
+  margin: auto;
+  width: 95%;
+}
+
+.heading {
+  padding: 2em 0;
   text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: 2.5px;
+}
+
+.sub-heading {
+  color: #fff;
+}
+
+.heading > p {
+  font-size: 0.8em;
+  letter-spacing: 4px;
+}
+
+@media (min-width: 650) {
+  .app {
+    width: 85%;
+  }
+}
+
+
+@media (min-width: 1050px) {
+  .app {
+    width: 65%;
+  }
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import './JokesContainer.css';
+import './JokesContainer.css';
 import JokeList from './JokeList';
 import axios from 'axios';
 
@@ -37,7 +37,7 @@ class JokesContainer extends Component {
         console.log('there was an error accessing the jokes db...');
       })
   }
-  getRandomJokes() {
+  getRandomJokes = () => {
     const randomJokes = [];
     const remainingJokes = this.state.allJokes.slice();
 
@@ -75,17 +75,26 @@ class JokesContainer extends Component {
   render() {
     return (
       <div>
-        <h2>Best Jokes</h2>
-        <JokeList jokes={this.state.bestJokes} />
+        <div className={'jokes-container'}>
+          <h2>Best Jokes</h2>
+          <JokeList jokes={this.state.bestJokes} />
+        </div>
 
-        <h2>Worst Jokes</h2>
-        <JokeList jokes={this.state.worstJokes} />
+        <div className={'jokes-container'}>
+          <h2>Worst Jokes</h2>
+          <JokeList jokes={this.state.worstJokes} />
+        </div>
 
-        <h2>Random Jokes</h2>
-        <JokeList 
-          votable={true}
-          updateVoteCount={this.updateVoteCount}
-          jokes={this.state.randomJokes} />
+        <div className={'jokes-container'}>
+          <h2>Random Jokes</h2>
+          <JokeList 
+            votable={true}
+            updateVoteCount={this.updateVoteCount}
+            jokes={this.state.randomJokes} />
+        </div>
+        <div className={'more-jokes'}>
+          <button onClick={this.getRandomJokes}>More Jokes</button>
+        </div>
       </div>
     )
   }

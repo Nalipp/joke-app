@@ -1,9 +1,52 @@
 .votable {
-  padding: 0.4em;
-  cursor: pointer;
 }
 
 .finished-vote {
-  color: #fff;
   pointer-events: none;
+  color: #fff;
+  jont-size: 1.4em;
+  display: inline-block;
+  width: 1em;
+  margin: 0.12em;
+  border-radius: 0.4em;
+  text-align: center;
+  padding: 0.4em;
 }
+
+.unfinished-vote {
+  font-size: 1.4em;
+  display: inline-block;
+  width: 1em;
+  margin: 0.12em;
+  border-radius: 0.4em;
+  text-align: center;
+  padding: 0.4em;
+  cursor: pointer;
+  border: 1px solid #344559;
+}
+
+.joke-container {
+  width: 60%;
+  padding: 1em;
+}
+
+.vote-count {
+  font-size: 2em;
+  padding: 0.4em;
+}
+
+@media (min-width: 650px) {
+  .votable, .finished-vote {
+    width: 2em;
+    margin: 0.25em;
+  }
+}
+
+
+@media (min-width: 1050px) {
+  .votable, .finished-vote {
+    width: 3em;
+    margin: 0.4em;
+  }
+}
+

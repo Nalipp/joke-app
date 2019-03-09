@@ -48,15 +48,23 @@ class JokeItem extends Component {
   }
   render() {
     return (
-      <div>
+      <div style={{'display': 'flex'}}>
         {this.props.votable &&
-          <span className={this.state.didVote ? 'finished-vote' : 'unfinished-vote'}>
-            <span onClick={this.handleUpvote} className={'votable'}>+</span>
-            <span onClick={this.handleDownvote} className={'votable'}>-</span>
-          </span>
+          <div>
+            <div className={this.state.didVote ? 'finished-vote' : 'unfinished-vote'}>
+              <span onClick={this.handleUpvote}>+</span>
+            </div>
+            <div className={this.state.didVote ? 'finished-vote' : 'unfinished-vote'}>
+              <span onClick={this.handleDownvote}>-</span>
+            </div>
+          </div>
         }
-        <span>{this.state.voteCount}</span>
-        <span>{this.props.joke.text}</span>
+        <div>
+          <span className={'vote-count'}>{this.state.voteCount}</span>
+        </div>
+        <div className={'joke-container'}>
+          <span>{this.props.joke.text}</span>
+        </div>
       </div>
     )
   }
